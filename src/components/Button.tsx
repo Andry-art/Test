@@ -10,7 +10,6 @@ const Button: FC<Props> = ({onSubmit, disabled}) => {
   const onPress = useCallback(() => {
     onSubmit();
   }, [onSubmit]);
-  console.log(disabled);
   return (
     <TouchableOpacity
       disabled={!disabled}
