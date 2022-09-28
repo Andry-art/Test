@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListRenderItemInfo, StyleSheet, View} from 'react-native';
+import {ListRenderItemInfo, StyleSheet} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Item from '../components/Item';
 import {myRewardsSelector} from '../store/selectors/RewardsSelectors';
@@ -18,13 +18,12 @@ const renderItem = ({item}: ListRenderItemInfo<TRewardsInfo>) => (
 const MyRewards = () => {
   const myRewords = useSelector(myRewardsSelector);
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={myRewords}
-        keyExtractor={item => String(item.id)}
-        renderItem={renderItem}
-      />
-    </View>
+    <FlatList
+      data={myRewords}
+      keyExtractor={item => String(item.id)}
+      renderItem={renderItem}
+      style={styles.container}
+    />
   );
 };
 

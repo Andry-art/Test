@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListRenderItemInfo, StyleSheet, View} from 'react-native';
+import {ListRenderItemInfo, StyleSheet} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Item from '../components/Item';
 import {TRewardsInfo} from '../types';
@@ -19,13 +19,12 @@ const Feed = () => {
   const listOfRewards = useSelector(allRewards);
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={listOfRewards}
-        keyExtractor={item => String(item.id)}
-        renderItem={renderItem}
-      />
-    </View>
+    <FlatList
+      data={listOfRewards}
+      keyExtractor={item => String(item.id)}
+      renderItem={renderItem}
+      style={styles.container}
+    />
   );
 };
 
