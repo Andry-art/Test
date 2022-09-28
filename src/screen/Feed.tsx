@@ -2,11 +2,11 @@ import React from 'react';
 import {ListRenderItemInfo, StyleSheet, View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import Item from '../components/Item';
-import {rewardsInfo} from '../types';
+import {TRewardsInfo} from '../types';
 import {useSelector} from 'react-redux';
 import {allRewards} from '../store/selectors/RewardsSelectors';
 
-const renderItem = ({item}: ListRenderItemInfo<rewardsInfo>) => (
+const renderItem = ({item}: ListRenderItemInfo<TRewardsInfo>) => (
   <Item
     reworded={item.reworded}
     rewordedBy={item.rewordedBy}

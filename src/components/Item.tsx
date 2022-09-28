@@ -12,13 +12,9 @@ interface Props {
 
 const Item: FC<Props> = ({reworded, rewordedBy, date, reason}) => {
   const title = `${reworded} rewarded by ${rewordedBy}`;
-  const dateNow = new Date();
-  const dateMonthBefore = new Date().setMonth(dateNow.getMonth() - 1);
-  const DatesBetweenMonth = moment(date).isBetween(
-    moment(dateMonthBefore).format('yy-M-D'),
-    moment(dateNow).format('yy-M-D'),
-  );
-  const data = DatesBetweenMonth
+  const isBefore = moment(date).isBefore(new Date(), 'month');
+  console.log(isBefore);
+  const data = !isBefore
     ? moment(date).fromNow()
     : moment(date).format('MMM D, YYYY');
 
